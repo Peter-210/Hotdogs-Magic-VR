@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 254d6ad503206f44f88b1f17dd256f21
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wandPrefab: {fileID: 919132149155446097, guid: a8c3d715dbaaeba4a9976f67b5df5ccc, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
