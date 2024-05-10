@@ -16,6 +16,7 @@ public class EnemyStateManager : MonoBehaviour {
     // Possible Enemy States
     public EnemyStateIdle Idle = new EnemyStateIdle();
     public EnemyStateShoot Shoot = new EnemyStateShoot();
+    public EnemyStatePotion Potion = new EnemyStatePotion();
 
     void Awake() {
         // Add rigidbody and hitbox component to the enemy

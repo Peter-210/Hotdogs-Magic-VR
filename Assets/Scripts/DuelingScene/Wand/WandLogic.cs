@@ -6,7 +6,7 @@ public class WandLogic : MonoBehaviour {
     [SerializeField] private string ProjectilePath = "ProjectilePlayer";
 
     private float initialRotation = -0.5f;
-    private float finalRotation = 0;
+    private float finalRotation = 0f;
     [SerializeField] private float threshold = 0.2f;
 
     float initialZUpper;
@@ -62,10 +62,11 @@ public class WandLogic : MonoBehaviour {
             yield return new WaitForSeconds(0.1f);
         }
         
+        reloading = false;
         wandShine.SetFloat("_Fresnel", 0);
         wandShine.SetFloat("_Dist", 0);
      //   yield return new WaitForSeconds(reloadDelay);
-        reloading = false;
+        
     }
 
     private void fireProjectile() {
@@ -77,25 +78,6 @@ public class WandLogic : MonoBehaviour {
         GameObject projectileObject = Instantiate(projectilePrefab, position, rotation) as GameObject;
         projectileObject.name = ProjectilePath;
 
-        // Make the projectile rigid
-        Rigidbody projectileRigid = projectileObject.AddComponent<Rigidbody>();
-        projectileRigid.useGravity = false;
-        projectileRigid.isKinematic = true;
-
-        // Make the projectile have a box collider
-        
-        //put the collider on child since it will affect parent
-       // BoxCollider boxCollider = projectileObject.AddComponent<BoxCollider>();
-       
-       
-       GameObject child = projectileObject.transform.GetChild(0).gameObject;
-       child.AddComponent<BoxCollider>();
-       BoxCollider childCollider = child.GetComponent<BoxCollider>();
-        childCollider.size = new Vector3(0.5f, 0.5f, 0.5f);
-        
-        
-      //  boxCollider.isTrigger = true;
-
         // Attach projectile to the wand
         projectileObject.transform.SetParent(GameObject.Find("Wand").transform);
 
@@ -106,6 +88,7 @@ public class WandLogic : MonoBehaviour {
         projectileObject.AddComponent<ProjectilePlayer>();
 
         // Add spatial audio
-        projectileObject.AddComponent<SpatialAudio>();
+        SpatialAudio audio = projectileObject.AddComponent<SpatialAudio>();
+        audio.setSound("projectileAudio",true);
     }
 }

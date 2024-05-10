@@ -1,7 +1,8 @@
 using UnityEngine;
 
 public class EnemyStateIdle : EnemyStateAbstract {
-    [SerializeField] private float movementRange = 4.5f;
+    [SerializeField] private float shootPercent = 0.7f;
+    [SerializeField] private float movementRange = 3.5f;
     [SerializeField] private float threshold = 0.2f;
     [SerializeField] private float speed = 1.0f;
     private float currentZPos;
@@ -28,11 +29,14 @@ public class EnemyStateIdle : EnemyStateAbstract {
         float offset = Mathf.Abs(currentZPos - finalZPos);
 
         if (offset <= threshold) {
-            // Change enemy to shoot state when it has moved to the target position
+            // Change enemy to shoot or potion state when it has moved to the target position
             // Meaning that the enemy is within threshold
-          
-           // state.ChangeState(state.Idle);
-            state.ChangeState(state.Shoot);
+        
+            if (Random.value <= shootPercent) {
+              state.ChangeState(state.Shoot);
+            } else {
+              state.ChangeState(state.Potion);
+            }
         } else {
             // Move enemy to the random position
             if (currentZPos - finalZPos > 0)

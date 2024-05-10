@@ -31,9 +31,8 @@ public class StartDuel : MonoBehaviour, IMenuSelection {
         Vector3 globalPos = controller.transform.TransformPoint(0f,0f,-0.1f);
         Quaternion rot = controller.transform.rotation;
         rot *= Quaternion.Euler(Vector3.right * -35);
-
         string isRight = controller.name;
-        Debug.Log(isRight);
+
         if (isRight.ToLower().Contains("right"))
         {
             SteamVR_Behaviour_Skeleton.lockRightClench = true;

@@ -494,8 +494,80 @@ namespace Valve.VR
             new Vector3(-0.03f, -0.09f, 0.08f),
             new Vector3(-0.02f, -0.08f, 0.12f)
         };
+
+
+
+        public static Vector3[] RIGHT_HAND_HOLD_POSITIONS = new Vector3[]
+        {
+            new Vector3(0.00f,0.00f,0.00f),
+            new Vector3(-0.03f,0.04f,0.16f),
+            new Vector3(-0.02f,0.03f,0.02f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.00f,0.02f,0.01f),
+            new Vector3(0.07f,0.01f,0.00f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.00f,0.01f,0.02f),
+            new Vector3(0.07f,0.00f,0.00f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.00f,-0.01f,0.02f),
+            new Vector3(0.07f,0.00f,0.00f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.00f,-0.02f,0.02f),
+            new Vector3(0.06f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.02f,0.02f,0.08f),
+            new Vector3(-0.01f,0.00f,0.07f),
+            new Vector3(-0.02f,-0.04f,0.08f),
+            new Vector3(-0.02f,-0.05f,0.10f),
+            new Vector3(-0.01f,-0.06f,0.13f)
+        };
+
+
+        public static Quaternion[] RIGHT_HAND_HOLD_ROTATIONS = new Quaternion[]
+        {
+            new Quaternion(0.00000f,1.00000f,0.00000f,0.00000f),
+            new Quaternion(-0.07861f,-0.92028f,0.37930f,-0.05515f),
+            new Quaternion(-0.27378f,-0.84719f,0.09383f,0.44555f),
+            new Quaternion(-0.01773f,0.07545f,-0.20281f,0.97615f),
+            new Quaternion(0.10271f,0.00482f,-0.34802f,0.93183f),
+            new Quaternion(0.00000f,0.00000f,0.00000f,1.00000f),
+            new Quaternion(-0.62663f,-0.44011f,-0.49995f,0.40459f),
+            new Quaternion(-0.01901f,0.09403f,-0.48647f,0.86841f),
+            new Quaternion(0.02069f,-0.00410f,-0.55394f,0.83229f),
+            new Quaternion(0.00032f,0.00928f,-0.45589f,0.88999f),
+            new Quaternion(0.00000f,0.00000f,0.00000f,1.00000f),
+            new Quaternion(-0.52401f,-0.47691f,-0.46789f,0.52824f),
+            new Quaternion(-0.12409f,-0.01470f,-0.53527f,0.83538f),
+            new Quaternion(0.00735f,-0.00501f,-0.50068f,0.86559f),
+            new Quaternion(0.00017f,0.00968f,-0.44423f,0.89586f),
+            new Quaternion(0.00000f,0.00000f,-0.04013f,0.99919f),
+            new Quaternion(-0.50431f,-0.44601f,-0.51167f,0.53380f),
+            new Quaternion(-0.06853f,0.03268f,-0.42885f,0.90018f),
+            new Quaternion(0.00001f,-0.00117f,-0.48604f,0.87394f),
+            new Quaternion(-0.00188f,0.00852f,-0.47825f,0.87818f),
+            new Quaternion(0.00000f,0.00000f,0.00000f,1.00000f),
+            new Quaternion(-0.50334f,-0.35672f,-0.61327f,0.49327f),
+            new Quaternion(-0.01641f,0.05280f,-0.34237f,0.93794f),
+            new Quaternion(-0.00318f,0.00519f,-0.45638f,0.88976f),
+            new Quaternion(0.00500f,0.02606f,-0.35258f,0.93541f),
+            new Quaternion(0.00000f,0.00000f,0.00000f,1.00000f),
+            new Quaternion(-0.38986f,0.34595f,-0.47885f,0.70642f),
+            new Quaternion(0.26773f,-0.88757f,-0.35462f,-0.12159f),
+            new Quaternion(0.48183f,-0.80135f,-0.32117f,-0.15007f),
+            new Quaternion(0.50932f,-0.80829f,-0.25405f,-0.15077f),
+            new Quaternion(0.45845f,-0.85746f,-0.23287f,-0.01901f)
+        };
         
-    
     
         /////////////////////////////////////////////////
         /// left hand
@@ -642,6 +714,79 @@ namespace Valve.VR
             new Quaternion(0.73679f, -0.63476f, -0.14394f, -0.18304f),
             new Quaternion(0.75841f, -0.63934f, -0.12668f, -0.00366f)
         };
+
+
+
+        public static Vector3[] LEFT_HAND_HOLD_POSITIONS = new Vector3[]
+        {
+            new Vector3(0.00f,0.00f,0.00f),
+            new Vector3(-0.03f,0.04f,0.16f),
+            new Vector3(-0.02f,0.03f,0.02f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.00f,0.02f,0.01f),
+            new Vector3(0.07f,0.01f,0.00f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.00f,0.01f,0.02f),
+            new Vector3(0.07f,0.00f,0.00f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.00f,-0.01f,0.02f),
+            new Vector3(0.07f,0.00f,0.00f),
+            new Vector3(0.04f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.00f,-0.02f,0.02f),
+            new Vector3(0.06f,0.00f,0.00f),
+            new Vector3(0.03f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.02f,0.00f,0.00f),
+            new Vector3(0.02f,-0.02f,-0.08f),
+            new Vector3(-0.01f,0.00f,-0.07f),
+            new Vector3(-0.02f,0.04f,-0.07f),
+            new Vector3(-0.02f,0.06f,-0.10f),
+            new Vector3(-0.02f,0.06f,-0.13f)
+        };
+
+
+        public static Quaternion[] LEFT_HAND_HOLD_ROTATIONS = new Quaternion[]
+        {
+            new Quaternion(0.00000f, 1.00000f, 0.00000f, 0.00000f),
+            new Quaternion(-0.07861f, -0.92028f, 0.37930f, -0.05515f),
+            new Quaternion(0.27378f, 0.84719f, -0.09383f, -0.44555f),
+            new Quaternion(-0.01773f, 0.07545f, -0.20281f, 0.97615f),
+            new Quaternion(0.10271f, 0.00482f, -0.34802f, 0.93183f),
+            new Quaternion(0.00000f, 0.00000f, 0.00000f, 1.00000f),
+            new Quaternion(0.62650f, 0.44019f, 0.50006f, -0.40455f),
+            new Quaternion(-0.01899f, 0.09458f, -0.48760f, 0.86772f),
+            new Quaternion(0.02066f, -0.00428f, -0.55677f, 0.83040f),
+            new Quaternion(0.00035f, 0.00927f, -0.45707f, 0.88938f),
+            new Quaternion(0.00000f, 0.00000f, 0.00000f, 1.00000f),
+            new Quaternion(0.52547f, 0.47583f, 0.46632f, -0.52916f),
+            new Quaternion(-0.12730f, -0.01096f, -0.51600f, 0.84701f),
+            new Quaternion(0.00848f, -0.00609f, -0.46322f, 0.88618f),
+            new Quaternion(-0.00008f, 0.01050f, -0.40322f, 0.91504f),
+            new Quaternion(0.00000f, 0.00000f, -0.04013f, 0.99919f),
+            new Quaternion(0.50711f, 0.44251f, 0.51098f, -0.53472f),
+            new Quaternion(-0.07260f, 0.03624f, -0.40059f, 0.91266f),
+            new Quaternion(-0.00017f, -0.00105f, -0.45089f, 0.89258f),
+            new Quaternion(-0.00172f, 0.00913f, -0.43620f, 0.89980f),
+            new Quaternion(0.00000f, 0.00000f, 0.00000f, 1.00000f),
+            new Quaternion(0.50648f, 0.35421f, 0.61237f, -0.49296f),
+            new Quaternion(-0.02466f, 0.05602f, -0.31314f, 0.94773f),
+            new Quaternion(-0.00282f, 0.00460f, -0.42177f, 0.90669f),
+            new Quaternion(0.00517f, 0.03041f, -0.30211f, 0.95277f),
+            new Quaternion(0.00000f, 0.00000f, 0.00000f, 1.00000f),
+            new Quaternion(-0.38986f, -0.34595f, 0.47885f, 0.70642f),
+            new Quaternion(0.27317f, 0.88605f, 0.35343f, -0.12404f),
+            new Quaternion(0.53801f, 0.76455f, 0.31162f, -0.17003f),
+            new Quaternion(0.57235f, 0.76494f, 0.24450f, -0.16582f),
+            new Quaternion(0.53733f, 0.81177f, 0.22641f, -0.03224f)
+        };
         
         
         
@@ -657,6 +802,9 @@ namespace Valve.VR
         public static bool isLeftClenching = false;
         public static bool lockRightClench = false;
         public static bool lockLeftClench = false;
+
+        public static bool isRightHolding = false;
+        public static bool isLeftHolding = false;
         
         //--------------------------------------------------------
         
@@ -1014,12 +1162,15 @@ namespace Valve.VR
       ///////////////////code injection here ====================
       ///
     //  Debug.Log("update");
+
+   
+    
       if (isRightHand)
       {
-          if (isRightClenching || lockRightClench)
+          if (isRightHolding || isRightClenching || lockRightClench)
           {
-              bonePositions = RIGHT_HAND_CLENCH_POSITIONS;
-              boneRotations = RIGHT_HAND_CLENCH_ROTATIONS;
+              bonePositions = RIGHT_HAND_HOLD_POSITIONS;
+              boneRotations = RIGHT_HAND_HOLD_ROTATIONS;
           }
           else
           {
@@ -1029,10 +1180,10 @@ namespace Valve.VR
       }
       else
       {
-          if (isLeftClenching || lockLeftClench)
+          if (isLeftHolding || isLeftClenching || lockLeftClench)
           {
-              bonePositions = LEFT_HAND_CLENCH_POSITIONS;
-              boneRotations = LEFT_HAND_CLENCH_ROTATIONS;
+              bonePositions = LEFT_HAND_HOLD_POSITIONS;
+              boneRotations = LEFT_HAND_HOLD_ROTATIONS;
           }
           else
           {

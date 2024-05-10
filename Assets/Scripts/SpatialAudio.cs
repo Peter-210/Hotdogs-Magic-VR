@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpatialAudio : MonoBehaviour {
-    private string audioSourceName = "projectileAudio";
+    private string audioSourceName = null;
+    private bool loop;
     private AudioSource audioSource;
+    private bool played = false;
 
     private Transform player;
-    [SerializeField] private float maxDistance = 10f;
+    [SerializeField] private float maxDistance = 30f;
     [SerializeField] private float volume = 1f;
 
     private void Start() {
@@ -16,7 +18,8 @@ public class SpatialAudio : MonoBehaviour {
 
         // General Settings for Audio
         audioSource.playOnAwake = false;
-        audioSource.loop = true;
+        audioSource.loop = this.loop;
+        
 
         // Get the audio needed to attach to gameObject
         AudioClip audioClip = Resources.Load<AudioClip>(audioSourceName);
@@ -27,7 +30,21 @@ public class SpatialAudio : MonoBehaviour {
         }
     }
 
-    private void Update() {
+
+    public void setSound(string resourceName, bool loop)
+    {
+        this.audioSourceName = resourceName;
+        this.loop = loop;
+    }
+    
+
+    private void Update()
+    {
+
+        if (!loop && played)
+            return;
+        
+        played = true;
         float currentDistance = Vector3.Distance(gameObject.transform.position, player.position);
         
         // If the object is too far away from the player to hear

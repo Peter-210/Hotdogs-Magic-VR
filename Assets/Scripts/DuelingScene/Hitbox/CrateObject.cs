@@ -4,7 +4,7 @@ using DuelingScene.Entity;
 using UnityEngine;
 
 public class CrateObject : MonoBehaviour, Entity {
-    [SerializeField] private int crateHealth = 3;
+    private int crateHealth = GameDefault.healthCrate;
 
     public bool damageEntity(GameObject damageSource) {
         ProjectilePlayer projectilePlayer = damageSource.GetComponent<ProjectilePlayer>();

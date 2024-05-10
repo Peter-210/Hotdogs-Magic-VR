@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectilePlayer : ProjectileAbstract {
-    [SerializeField] private float projectileSpeed = 3f;
     [SerializeField] private float delayFire = 1f;
-    [SerializeField] private float deleteProjectile = 3f;
     private bool charging = false;
+
+    protected override void Init() {
+        projectileSpeed = 3f;
+        deleteProjectile = 3f;
+        particlePath = "ParticleExplosionBlue";
+    }
     
-    
-    private Object effect;
-    
-    private void Start() {
-        effect = Resources.Load<Object>("ParticleExplosionBlue");
+    protected override void Start() {
+        base.Start();
         StartCoroutine(Charging());
     }
 
-    public override void fireProjectile() {
+    protected override void fireProjectile() {
         // Charging - Keep the projectile stuck to the wand
         if (charging) return;
 
         // Detach projectile from wand
         this.transform.SetParent(null);
 
-        // Let the projectile travel forward
-        StartCoroutine(Travel());
+        base.fireProjectile();
     }
 
     public override void ProjectileHit(GameObject hitObject) {
         base.ProjectileHit(hitObject);
+
+        PotionEnemy potion = hitObject.GetComponent<PotionEnemy>();
+        if (potion != null) DestroyProjectile();
 
         // !charging prevent player from accidentally destroying projectile 
         // during charge state when hitting it against the floor
@@ -36,42 +39,24 @@ public class ProjectilePlayer : ProjectileAbstract {
            DestroyProjectile();
        }
     }
-
-    public override void playExplosion()
-    {
-        StartCoroutine(particleTimer());
-    }
     
-    
-    private IEnumerator particleTimer()
-    {
-        GameObject particles = Instantiate(effect, gameObject.transform.position, Quaternion.identity) as GameObject;
-        yield return new WaitForSeconds(1f);
-        Destroy(particles);
+    public override void DestroyProjectile() {
+        GameObject particle = Instantiate(
+            effect, 
+            gameObject.transform.position, 
+            Quaternion.identity
+        ) as GameObject;
         
+        particle.AddComponent<ProjectileParticle>();
+        SpatialAudio audio = particle.AddComponent<SpatialAudio>();
+        audio.setSound("soft_explosion",false);
         
+        Destroy(gameObject);
     }
 
     IEnumerator Charging() {
         charging = true;
         yield return new WaitForSeconds(delayFire);
         charging = false;
-    }
-
-    IEnumerator Travel() {
-        float currentTime = 0;
-
-        while (currentTime < deleteProjectile) {
-            // Update elapsed time
-            currentTime += Time.deltaTime;
-
-            // Move projectile forward
-            transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
-
-            yield return null;
-        }
-
-        // Projectile expires
-        Destroy(gameObject);
     }
 }
